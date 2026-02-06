@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations | Atelier Kentañ</title>
+    <meta name="description" content="Découvrez nos projets de menuiserie sur-mesure : cuisines, dressings, agencement professionnel à Pont-l'Abbé et alentours.">
+    <!-- <link rel="canonical" href="https://atelier-kentan.fr/realisations/"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{black:'#0f172a',dark:'#334155',base:'#64748b',light:'#f1f5f9',bg:'#ffffff',wood:'#c2410c'}},fontFamily:{serif:['"Space Grotesk"','sans-serif'],sans:['"Inter"','sans-serif']},transitionTimingFunction:{'out-expo':'cubic-bezier(0.19, 1, 0.22, 1)'}}}}</script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+    
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white border-b border-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a href="/" class="z-50 relative group"><span class="font-serif text-2xl tracking-tighter text-slate-900 font-bold uppercase">Atelier Kentañ</span></a>
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">Accueil</a>
+                <a href="/realisations/" class="text-xs uppercase tracking-widest font-bold text-brand-wood transition-colors">Réalisations</a>
+                <a href="/services/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">Services</a>
+                <a href="/a-propos/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">À Propos</a>
+                <a href="/contact/" class="ml-6 py-3 px-6 text-xs uppercase tracking-widest font-bold bg-slate-900 text-white hover:bg-brand-wood transition-all border border-transparent hover:border-brand-wood inline-flex items-center">Demander un devis</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden z-50 text-slate-900 hover:text-brand-wood transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
+        </div>
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center space-y-8 opacity-0 pointer-events-none">
+            <a href="/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Accueil</a>
+            <a href="/realisations/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Réalisations</a>
+            <a href="/services/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Services</a>
+            <a href="/a-propos/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">À Propos</a>
+            <a href="/contact/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="reveal-item border-b border-brand-light pb-12 mb-16">
+                <h1 class="font-serif text-5xl md:text-8xl text-slate-900 mb-8 tracking-tighter uppercase">Projets.</h1>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+                    <p class="text-slate-700 text-lg max-w-xl font-light">Une collection de réalisations sur-mesure dans le Finistère Sud. Focus matière, précision d'assemblage, intégration architecturale.</p>
+                    <div class="flex flex-wrap gap-px bg-brand-light p-px">
+                        <button class="filter-btn px-6 py-3 text-xs uppercase font-bold tracking-wider transition-all bg-slate-900 text-white" data-filter="Tous">Tous</button>
+                        <button class="filter-btn px-6 py-3 text-xs uppercase font-bold tracking-wider transition-all bg-white text-slate-500 hover:text-slate-900" data-filter="Cuisine">Cuisine</button>
+                        <button class="filter-btn px-6 py-3 text-xs uppercase font-bold tracking-wider transition-all bg-white text-slate-500 hover:text-slate-900" data-filter="Dressing">Dressing</button>
+                        <button class="filter-btn px-6 py-3 text-xs uppercase font-bold tracking-wider transition-all bg-white text-slate-500 hover:text-slate-900" data-filter="Pro">Pro</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+                <div class="project-item reveal-item delay-100 group cursor-pointer" data-category="Cuisine">
+                    <div class="relative aspect-[4/3] bg-slate-100 mb-6 overflow-hidden border border-brand-light">
+                        <img src="https://picsum.photos/1200/900?random=10" alt="Résidence Penmarc’h" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out-expo group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <div class="border-t border-slate-900/20 pt-4 flex justify-between items-baseline">
+                        <h3 class="font-serif text-3xl text-slate-900 group-hover:text-brand-wood transition-colors">Résidence Penmarc’h</h3>
+                        <span class="text-xs font-bold uppercase text-slate-500 tracking-widest">Cuisine</span>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-slate-700"><span>Penmarc’h</span><span>2025</span></div>
+                </div>
+                <div class="project-item reveal-item delay-200 group cursor-pointer" data-category="Pro">
+                    <div class="relative aspect-[4/3] bg-slate-100 mb-6 overflow-hidden border border-brand-light">
+                        <img src="https://picsum.photos/1200/900?random=11" alt="Boutique Quimper" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out-expo group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <div class="border-t border-slate-900/20 pt-4 flex justify-between items-baseline">
+                        <h3 class="font-serif text-3xl text-slate-900 group-hover:text-brand-wood transition-colors">Boutique Quimper</h3>
+                        <span class="text-xs font-bold uppercase text-slate-500 tracking-widest">Pro</span>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-slate-700"><span>Quimper</span><span>2024</span></div>
+                </div>
+                <div class="project-item reveal-item delay-100 group cursor-pointer" data-category="Dressing">
+                    <div class="relative aspect-[4/3] bg-slate-100 mb-6 overflow-hidden border border-brand-light">
+                        <img src="https://picsum.photos/1200/900?random=12" alt="Villa Bénodet" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out-expo group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <div class="border-t border-slate-900/20 pt-4 flex justify-between items-baseline">
+                        <h3 class="font-serif text-3xl text-slate-900 group-hover:text-brand-wood transition-colors">Villa Bénodet</h3>
+                        <span class="text-xs font-bold uppercase text-slate-500 tracking-widest">Dressing</span>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-slate-700"><span>Bénodet</span><span>2025</span></div>
+                </div>
+                <div class="project-item reveal-item delay-200 group cursor-pointer" data-category="Mobilier">
+                    <div class="relative aspect-[4/3] bg-slate-100 mb-6 overflow-hidden border border-brand-light">
+                        <img src="https://picsum.photos/1200/900?random=13" alt="Loft Concarneau" class="w-full h-full object-cover grayscale transition-all duration-700 ease-out-expo group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <div class="border-t border-slate-900/20 pt-4 flex justify-between items-baseline">
+                        <h3 class="font-serif text-3xl text-slate-900 group-hover:text-brand-wood transition-colors">Loft Concarneau</h3>
+                        <span class="text-xs font-bold uppercase text-slate-500 tracking-widest">Mobilier</span>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-slate-700"><span>Concarneau</span><span>2024</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-100 pt-24 pb-8 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-700/30">
+                <div class="md:col-span-5 space-y-8"><h3 class="font-serif text-4xl text-white font-bold tracking-tighter uppercase">Atelier Kentañ</h3><div class="space-y-4 text-slate-500 font-sans"><p>12 Rue des Artisans, 29120 Pont-l’Abbé</p></div></div>
+                <div class="md:col-span-3 md:pl-12 border-l border-slate-700/30 pl-0"><h4 class="text-brand-wood text-xs uppercase tracking-widest mb-8 font-bold">Menu</h4><ul class="space-y-4"><li><a href="/" class="text-white hover:text-brand-wood">Accueil</a></li><li><a href="/realisations/" class="text-white hover:text-brand-wood">Réalisations</a></li><li><a href="/contact/" class="text-white hover:text-brand-wood">Contact</a></li></ul></div>
+            </div>
+            <div class="pt-8 text-xs text-slate-500 uppercase tracking-wider"><p>© 2025 Atelier Kentañ</p></div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise & Services | Atelier Kentañ</title>
+    <meta name="description" content="Nos services de menuiserie : cuisines équipées, dressings sur-mesure, bibliothèques, agencement de magasins et bureaux.">
+    <!-- <link rel="canonical" href="https://atelier-kentan.fr/services/"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{black:'#0f172a',dark:'#334155',base:'#64748b',light:'#f1f5f9',bg:'#ffffff',wood:'#c2410c'}},fontFamily:{serif:['"Space Grotesk"','sans-serif'],sans:['"Inter"','sans-serif']},transitionTimingFunction:{'out-expo':'cubic-bezier(0.19, 1, 0.22, 1)'}}}}</script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+    
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white border-b border-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a href="/" class="z-50 relative group"><span class="font-serif text-2xl tracking-tighter text-slate-900 font-bold uppercase">Atelier Kentañ</span></a>
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">Accueil</a>
+                <a href="/realisations/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">Réalisations</a>
+                <a href="/services/" class="text-xs uppercase tracking-widest font-bold text-brand-wood transition-colors">Services</a>
+                <a href="/a-propos/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">À Propos</a>
+                <a href="/contact/" class="ml-6 py-3 px-6 text-xs uppercase tracking-widest font-bold bg-slate-900 text-white hover:bg-brand-wood transition-all border border-transparent hover:border-brand-wood inline-flex items-center">Demander un devis</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden z-50 text-slate-900 hover:text-brand-wood transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
+        </div>
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center space-y-8 opacity-0 pointer-events-none">
+            <a href="/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Accueil</a>
+            <a href="/services/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Services</a>
+            <a href="/contact/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="reveal-item grid md:grid-cols-12 gap-12 mb-24 border-b border-slate-900 pb-12">
+                <div class="md:col-span-8">
+                   <h1 class="font-serif text-5xl md:text-8xl text-slate-900 mb-8 tracking-tighter uppercase">Expertise.</h1>
+                   <p class="text-xl md:text-2xl text-slate-700 font-light leading-tight">Nous ne vendons pas de modules standards.<br/>Chaque création est une réponse unique à une contrainte d'espace ou une envie esthétique.</p>
+                </div>
+            </div>
+
+            <div class="mb-32 border-t border-brand-light">
+                <div class="group grid md:grid-cols-12 gap-8 py-12 border-b border-brand-light hover:bg-slate-50 transition-colors items-center reveal-item">
+                    <div class="md:col-span-1 text-slate-500 font-mono text-xs">01</div>
+                    <div class="md:col-span-4"><h3 class="font-serif text-3xl text-slate-900 uppercase group-hover:text-brand-wood transition-colors">Cuisine</h3></div>
+                    <div class="md:col-span-4"><p class="text-slate-700 leading-relaxed">Conception ergonomique et lignes pures.</p></div>
+                </div>
+                <div class="group grid md:grid-cols-12 gap-8 py-12 border-b border-brand-light hover:bg-slate-50 transition-colors items-center reveal-item delay-100">
+                    <div class="md:col-span-1 text-slate-500 font-mono text-xs">02</div>
+                    <div class="md:col-span-4"><h3 class="font-serif text-3xl text-slate-900 uppercase group-hover:text-brand-wood transition-colors">Dressing</h3></div>
+                    <div class="md:col-span-4"><p class="text-slate-700 leading-relaxed">Organisation optimale et finitions luxueuses.</p></div>
+                </div>
+                <div class="group grid md:grid-cols-12 gap-8 py-12 border-b border-brand-light hover:bg-slate-50 transition-colors items-center reveal-item delay-200">
+                    <div class="md:col-span-1 text-slate-500 font-mono text-xs">03</div>
+                    <div class="md:col-span-4"><h3 class="font-serif text-3xl text-slate-900 uppercase group-hover:text-brand-wood transition-colors">Agencement Pro</h3></div>
+                    <div class="md:col-span-4"><p class="text-slate-700 leading-relaxed">Boutiques, bureaux, restaurants.</p></div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center text-center reveal-item">
+                <div class="border border-slate-900 p-12 md:p-24 max-w-4xl relative">
+                  <h2 class="font-serif text-3xl md:text-5xl mb-8 uppercase tracking-tight">Étude & Chiffrage</h2>
+                  <p class="text-slate-700 max-w-lg mx-auto mb-10 text-lg">Chaque projet est unique. Le budget dépend des matériaux et de la complexité technique.</p>
+                  <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-bold bg-slate-900 text-white hover:bg-brand-wood transition-all">Prendre rendez-vous</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-100 pt-24 pb-8 border-t border-slate-900">
+         <div class="max-w-7xl mx-auto px-6 md:px-12"><div class="pt-8 text-xs text-slate-500 uppercase tracking-wider"><p>© 2025 Atelier Kentañ</p></div></div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

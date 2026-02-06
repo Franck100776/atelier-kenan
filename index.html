@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Kentañ | Menuiserie & Agencement Sur-Mesure à Pont-l’Abbé</title>
+    <meta name="description" content="Atelier Kentañ : Agencement sur-mesure et menuiserie haut de gamme en bois massif. Fabrication locale à Pont-l’Abbé, intervention Quimper, Concarneau, Pays Bigouden.">
+    <!-- Canonical temporaire ou commenté pour éviter indexation du staging -->
+    <!-- <link rel="canonical" href="https://atelier-kentan.fr/"> -->
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                black: '#0f172a',
+                dark: '#334155',
+                base: '#64748b',
+                light: '#f1f5f9',
+                bg: '#ffffff',
+                wood: '#c2410c',
+              }
+            },
+            fontFamily: {
+              serif: ['"Space Grotesk"', 'sans-serif'],
+              sans: ['"Inter"', 'sans-serif'],
+            },
+            transitionTimingFunction: {
+              'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Atelier Kentañ",
+      "image": "https://atelier-kentan.fr/assets/images/og-image.jpg",
+      "@id": "https://atelier-kentan.fr",
+      "url": "https://atelier-kentan.fr",
+      "telephone": "+33 6 12 34 56 78",
+      "email": "contact@atelier-kentan.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Rue des Artisans",
+        "addressLocality": "Pont-l’Abbé",
+        "postalCode": "29120",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.8667,
+        "longitude": -4.2167
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      "priceRange": "€€€"
+    }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white border-b border-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a href="/" class="z-50 relative group">
+                <span class="font-serif text-2xl tracking-tighter text-slate-900 font-bold uppercase">Atelier Kentañ</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="/" class="text-xs uppercase tracking-widest font-bold text-brand-wood transition-colors">Accueil</a>
+                <a href="/realisations/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">Réalisations</a>
+                <a href="/services/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">Services</a>
+                <a href="/a-propos/" class="text-xs uppercase tracking-widest font-bold text-slate-900 hover:text-brand-wood transition-colors">À Propos</a>
+                <a href="/contact/" class="ml-6 py-3 px-6 text-xs uppercase tracking-widest font-bold bg-slate-900 text-white hover:bg-brand-wood transition-all border border-transparent hover:border-brand-wood inline-flex items-center">Demander un devis</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden z-50 text-slate-900 hover:text-brand-wood transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center space-y-8 opacity-0 pointer-events-none">
+            <a href="/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Accueil</a>
+            <a href="/realisations/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Réalisations</a>
+            <a href="/services/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Services</a>
+            <a href="/a-propos/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">À Propos</a>
+            <a href="/contact/" class="font-serif text-4xl text-slate-900 hover:text-brand-wood transition-colors font-bold tracking-tight">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero -->
+        <section class="pt-24 min-h-screen flex flex-col">
+            <div class="flex-grow grid md:grid-cols-2 border-b border-brand-light">
+                <div class="p-6 md:p-12 lg:p-20 flex flex-col justify-center bg-white relative order-2 md:order-1">
+                    <div class="absolute top-0 left-0 w-24 h-24 border-t border-l border-slate-900/10 m-6 hidden md:block"></div>
+                    <div class="reveal-item">
+                        <h1 class="font-serif text-5xl lg:text-7xl leading-[0.95] text-slate-900 mb-8 tracking-tighter">AGENCEMENT<br/><span class="text-brand-wood">SUR-MESURE.</span><br/>BOIS MASSIF.</h1>
+                    </div>
+                    <div class="reveal-item delay-200">
+                        <p class="text-lg text-slate-700 max-w-md leading-relaxed mb-10 font-medium">Fabrication locale à Pont-l’Abbé.<br/>Rigueur technique et esthétique intemporelle pour particuliers et architectes.</p>
+                    </div>
+                    <div class="reveal-item delay-300 flex flex-col sm:flex-row gap-4">
+                        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-bold bg-slate-900 text-white hover:bg-brand-wood transition-all">Démarrer un projet</a>
+                        <a href="/realisations/" class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-bold border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-all">Le Portfolio</a>
+                    </div>
+                </div>
+                <div class="relative h-[50vh] md:h-auto order-1 md:order-2 border-l border-brand-light overflow-hidden">
+                    <div class="reveal-item h-full w-full">
+                        <img src="https://picsum.photos/1200/1600?grayscale" alt="Atelier Kentañ Menuiserie" class="object-cover w-full h-full hover:scale-105 transition-transform duration-1000 ease-out-expo grayscale contrast-125">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Answer First -->
+        <section class="py-20 border-b border-brand-light">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12">
+                <div class="md:col-span-4">
+                    <span class="block w-12 h-1 bg-brand-wood mb-6"></span>
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900">L'Atelier Kentañ</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="text-2xl md:text-3xl text-slate-900 leading-tight font-light">
+                        Nous sommes une menuiserie d'agencement basée à <span class="font-medium">Pont-l’Abbé (Bretagne)</span>. Spécialistes du sur-mesure haut de gamme, nous intervenons en Pays Bigouden, Quimper et Concarneau. Un seul interlocuteur de la conception des plans à la pose finale.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Bento -->
+        <section class="py-24 bg-slate-50 border-b border-brand-light">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex justify-between items-end mb-12">
+                    <h2 class="font-serif text-4xl md:text-6xl text-slate-900 tracking-tight reveal-item">SAVOIR-FAIRE</h2>
+                    <a href="/services/" class="hidden md:flex items-center text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-brand-wood transition-colors reveal-item delay-200">Tous les services <span class="ml-2">→</span></a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-auto md:h-[800px]">
+                    <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-white border border-brand-light/50 reveal-item delay-100">
+                        <img src="https://picsum.photos/600/800?random=1" alt="Cuisine Sur Mesure" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8 md:p-12">
+                            <h3 class="font-serif text-3xl text-white mb-2">Cuisine</h3>
+                            <p class="text-white/80">Conception ergonomique et lignes pures.</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden bg-white border border-brand-light/50 reveal-item delay-200">
+                        <img src="https://picsum.photos/600/800?random=2" alt="Dressing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="font-serif text-2xl text-white bg-slate-900/50 px-2">Dressing</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 text-white p-8 flex flex-col justify-between border border-slate-900 group hover:bg-brand-wood transition-colors reveal-item delay-300">
+                        <div class="mb-4 text-slate-400 group-hover:text-white">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM12 8v8M8 12h8"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl mb-2">Agencement Pro</h3>
+                            <p class="text-slate-300 text-sm group-hover:text-white">Boutiques & Bureaux.</p>
+                        </div>
+                        <div class="mt-4 text-right">→</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Method -->
+        <section class="py-24 bg-white border-b border-brand-light">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
+                    <h2 class="font-serif text-4xl md:text-5xl text-slate-900 tracking-tight leading-none reveal-item">PROCESSUS<br/>MAÎTRISÉ.</h2>
+                    <p class="text-slate-500 text-lg reveal-item delay-100">L'excellence ne laisse rien au hasard. Notre méthodologie en 4 étapes garantit que le résultat final correspond exactement aux plans validés.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 border-t border-l border-brand-light">
+                    <!-- Step 1 -->
+                    <div class="p-8 border-r border-b border-brand-light h-full hover:bg-slate-50 transition-colors group reveal-item delay-100">
+                        <span class="block font-bold text-lg text-slate-900 mb-3 uppercase tracking-wide">01. ÉCOUTE</span>
+                        <p class="text-slate-700 text-sm leading-relaxed">Analyse des besoins et contraintes techniques sur site.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-8 border-r border-b border-brand-light h-full hover:bg-slate-50 transition-colors group reveal-item delay-200">
+                        <span class="block font-bold text-lg text-slate-900 mb-3 uppercase tracking-wide">02. ÉTUDE</span>
+                        <p class="text-slate-700 text-sm leading-relaxed">Conception 3D et plans techniques précis.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-8 border-r border-b border-brand-light h-full hover:bg-slate-50 transition-colors group reveal-item delay-300">
+                        <span class="block font-bold text-lg text-slate-900 mb-3 uppercase tracking-wide">03. ATELIER</span>
+                        <p class="text-slate-700 text-sm leading-relaxed">Fabrication manuelle et assemblage à blanc.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="p-8 border-r border-b border-brand-light h-full hover:bg-slate-50 transition-colors group reveal-item delay-400">
+                        <span class="block font-bold text-lg text-slate-900 mb-3 uppercase tracking-wide">04. POSE</span>
+                        <p class="text-slate-700 text-sm leading-relaxed">Installation millimétrée par nos soins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preuves & Témoignages -->
+        <section class="grid md:grid-cols-2">
+            <div class="bg-slate-900 text-white p-12 md:p-24 flex flex-col justify-center">
+                <div class="reveal-item">
+                    <h2 class="font-serif text-3xl mb-12">ENGAGEMENTS</h2>
+                    <ul class="space-y-8">
+                        <li class="flex items-center text-xl font-light border-b border-white/20 pb-4">
+                            <span class="text-brand-wood mr-6 text-2xl">✓</span>
+                            Respect absolu des délais
+                        </li>
+                        <li class="flex items-center text-xl font-light border-b border-white/20 pb-4">
+                            <span class="text-brand-wood mr-6 text-2xl">✓</span>
+                            Finitions haut de gamme
+                        </li>
+                        <li class="flex items-center text-xl font-light border-b border-white/20 pb-4">
+                            <span class="text-brand-wood mr-6 text-2xl">✓</span>
+                            Transparence tarifaire
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-12 md:p-24 flex flex-col justify-center">
+                <div class="reveal-item delay-200">
+                    <div class="text-brand-wood mb-8 text-6xl font-serif">"</div>
+                    <p class="text-2xl text-slate-900 font-medium leading-normal mb-8">
+                        Un travail d'orfèvre. L'équipe a su s'adapter aux murs anciens de notre maison avec une précision incroyable.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-wood mr-4 flex items-center justify-center text-white font-bold">F</div>
+                        <div>
+                            <div class="font-bold text-slate-900 uppercase tracking-wide text-sm">Famille Le Gall</div>
+                            <div class="text-xs text-slate-500">Bibliothèque sur-mesure</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-24 max-w-5xl mx-auto px-6 md:px-12">
+            <div class="reveal-item">
+                <h2 class="font-serif text-3xl text-center mb-16 tracking-tight">QUESTIONS FRÉQUENTES</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="reveal-item delay-100">
+                    <details class="group border border-brand-light bg-white p-6 cursor-pointer open:border-slate-900 transition-colors">
+                        <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-900 uppercase tracking-wide">
+                            Quels sont vos délais de fabrication ?
+                            <span class="transform group-open:rotate-180 transition-transform text-brand-wood">▼</span>
+                        </summary>
+                        <p class="text-slate-700 mt-6 leading-relaxed pl-1 border-t border-brand-light pt-4">Nos délais varient selon la complexité du projet et la charge de l'atelier. Comptez généralement 8 à 12 semaines entre la validation des plans et la pose.</p>
+                    </details>
+                </div>
+                <div class="reveal-item delay-200">
+                    <details class="group border border-brand-light bg-white p-6 cursor-pointer open:border-slate-900 transition-colors">
+                        <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-900 uppercase tracking-wide">
+                            Le devis est-il payant ?
+                            <span class="transform group-open:rotate-180 transition-transform text-brand-wood">▼</span>
+                        </summary>
+                        <p class="text-slate-700 mt-6 leading-relaxed pl-1 border-t border-brand-light pt-4">Le premier rendez-vous de découverte et l'estimation budgétaire sont gratuits. Les études techniques détaillées et plans 3D font l'objet d'honoraires déduits de la facture finale.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-32 bg-slate-900 text-center px-6">
+            <div class="reveal-item">
+                <h2 class="font-serif text-5xl md:text-7xl mb-8 text-white tracking-tighter">VOTRE PROJET<br/>COMMENCE ICI.</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-6 mt-12">
+                    <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest font-bold bg-white text-slate-900 hover:bg-brand-wood hover:text-white transition-all">Demander un devis</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-100 pt-24 pb-8 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-700/30">
+                <div class="md:col-span-5 space-y-8">
+                    <h3 class="font-serif text-4xl text-white font-bold tracking-tighter uppercase">Atelier Kentañ</h3>
+                    <div class="space-y-4 text-slate-500 font-sans">
+                        <p class="flex items-start"><span class="mr-4 text-brand-wood">📍</span>12 Rue des Artisans, 29120 Pont-l’Abbé</p>
+                        <p class="flex items-center"><span class="mr-4 text-brand-wood">✉️</span>contact@atelier-kentan.fr</p>
+                        <p class="flex items-center"><span class="mr-4 text-brand-wood">📞</span>+33 6 12 34 56 78</p>
+                    </div>
+                </div>
+                <div class="md:col-span-3 md:pl-12 border-l border-slate-700/30 pl-0">
+                    <h4 class="text-brand-wood text-xs uppercase tracking-widest mb-8 font-bold">Menu</h4>
+                    <ul class="space-y-4">
+                        <li><a href="/" class="text-white hover:text-brand-wood transition-colors text-lg font-medium">Accueil</a></li>
+                        <li><a href="/realisations/" class="text-white hover:text-brand-wood transition-colors text-lg font-medium">Réalisations</a></li>
+                        <li><a href="/services/" class="text-white hover:text-brand-wood transition-colors text-lg font-medium">Services</a></li>
+                        <li><a href="/contact/" class="text-white hover:text-brand-wood transition-colors text-lg font-medium">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4 border-l border-slate-700/30 md:pl-12">
+                    <h4 class="text-brand-wood text-xs uppercase tracking-widest mb-8 font-bold">Atelier</h4>
+                    <div class="text-slate-500 space-y-1 mb-10">
+                        <p class="font-medium text-white">Lundi — Vendredi</p>
+                        <p>08:30–12:30 / 14:00–18:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 uppercase tracking-wider">
+                <p>© 2025 Atelier Kentañ</p>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <a href="/mentions-legales/" class="hover:text-white">Mentions Légales</a>
+                    <a href="/politique-confidentialite/" class="hover:text-white">Confidentialité</a>
+                    <a href="/politique-cookies/" class="hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
